@@ -1,0 +1,33 @@
+[gd_scene load_steps=7 format=3 uid="uid://dky44u30a2qj3"]
+
+[ext_resource type="Script" path="res://scenes/Main/Main.gd" id="1_rtn58"]
+[ext_resource type="Script" path="res://scripts/Grid.gd" id="2_dadgn"]
+[ext_resource type="PackedScene" uid="uid://b3otfkj7v330p" path="res://scenes/Unit/unit.tscn" id="3_rmva0"]
+[ext_resource type="Script" path="res://scripts/Camera2D.gd" id="3_ut04v"]
+[ext_resource type="Script" path="res://scripts/PathFinder.gd" id="4_3hg63"]
+
+[sub_resource type="GDScript" id="GDScript_0vny1"]
+script/source = "extends HTTPRequest
+"
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_rtn58")
+
+[node name="Grid" type="Node2D" parent="."]
+script = ExtResource("2_dadgn")
+show_debug = true
+
+[node name="Debug" type="Node2D" parent="Grid"]
+
+[node name="Units" type="Node2D" parent="Grid"]
+
+[node name="Unit" parent="Grid/Units" instance=ExtResource("3_rmva0")]
+
+[node name="PathFinder" type="Node2D" parent="Grid"]
+script = ExtResource("4_3hg63")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+script = ExtResource("3_ut04v")
+
+[node name="HTTPRequest" type="HTTPRequest" parent="."]
+script = SubResource("GDScript_0vny1")

@@ -4,6 +4,7 @@ extends Node2D
 
 func _ready():
 	grid.generateGrid()
+	$Grid/PathFinder.initialize()
 	
 func _call_nova_bot():
 	var data = {
