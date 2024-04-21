@@ -1,10 +1,152 @@
-[gd_scene load_steps=7 format=3 uid="uid://dky44u30a2qj3"]
+[gd_scene load_steps=44 format=3 uid="uid://dky44u30a2qj3"]
 
 [ext_resource type="Script" path="res://scenes/Main/Main.gd" id="1_rtn58"]
+[ext_resource type="Texture2D" uid="uid://dg8lm6fdv2mue" path="res://art/Tile/scifiTile_41.png" id="2_46jqw"]
 [ext_resource type="Script" path="res://scripts/Grid.gd" id="2_dadgn"]
+[ext_resource type="Texture2D" uid="uid://c4a87f3ieqldx" path="res://art/Tile/scifiTile_14.png" id="3_1b72e"]
 [ext_resource type="PackedScene" uid="uid://b3otfkj7v330p" path="res://scenes/Unit/unit.tscn" id="3_rmva0"]
 [ext_resource type="Script" path="res://scripts/Camera2D.gd" id="3_ut04v"]
 [ext_resource type="Script" path="res://scripts/PathFinder.gd" id="4_3hg63"]
+[ext_resource type="Texture2D" uid="uid://3x3t5vfdavxx" path="res://art/Environment/scifiEnvironment_04.png" id="4_5ksfm"]
+[ext_resource type="Texture2D" uid="uid://blbs0x1lk42n7" path="res://art/Environment/scifiEnvironment_13.png" id="5_b2i40"]
+[ext_resource type="Texture2D" uid="uid://uogfswovsmv4" path="res://art/Environment/scifiEnvironment_15.png" id="6_nh60p"]
+[ext_resource type="Texture2D" uid="uid://dhymqfv0kbh1" path="res://art/Environment/scifiEnvironment_16.png" id="7_6svxm"]
+[ext_resource type="Texture2D" uid="uid://byovipnqevryd" path="res://art/Environment/scifiEnvironment_17.png" id="8_4eyal"]
+[ext_resource type="Texture2D" uid="uid://c25jkip4mylxh" path="res://art/Environment/scifiEnvironment_18.png" id="9_jc7do"]
+[ext_resource type="Texture2D" uid="uid://bh0allj4bpwd3" path="res://art/Environment/scifiEnvironment_19.png" id="10_xcdn0"]
+[ext_resource type="Texture2D" uid="uid://cp8q0d0pkka2w" path="res://art/Environment/scifiEnvironment_20.png" id="11_o8n4v"]
+[ext_resource type="Texture2D" uid="uid://combmhk26gv50" path="res://art/Structure/scifiStructure_01.png" id="12_pan0t"]
+[ext_resource type="Texture2D" uid="uid://dqgbbr2sixtq" path="res://art/Structure/scifiStructure_04.png" id="13_etlbx"]
+[ext_resource type="Texture2D" uid="uid://drsvkhi1da8d4" path="res://art/Structure/scifiStructure_05.png" id="14_rc3f4"]
+[ext_resource type="Texture2D" uid="uid://dnt0iujatbqpe" path="res://art/Structure/scifiStructure_06.png" id="15_v1ivu"]
+[ext_resource type="Texture2D" uid="uid://bmteprrv3ogpu" path="res://art/Structure/scifiStructure_11.png" id="16_dyp0c"]
+[ext_resource type="Texture2D" uid="uid://tdqm8fvvi5hk" path="res://art/Structure/scifiStructure_16.png" id="17_nxqat"]
+[ext_resource type="Texture2D" uid="uid://qs46df67v30d" path="res://art/Structure/scifiStructure_15.png" id="18_flxvx"]
+[ext_resource type="Texture2D" uid="uid://b8bg0sxwfd183" path="res://art/Environment/scifiEnvironment_01.png" id="19_ddpks"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jr1jk"]
+resource_name = "Dirt"
+texture = ExtResource("2_46jqw")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2y056"]
+resource_name = "Water"
+texture = ExtResource("3_1b72e")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xdp15"]
+resource_name = "DirtRock"
+texture = ExtResource("4_5ksfm")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lj0c7"]
+resource_name = "GoldRock"
+texture = ExtResource("5_b2i40")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mea12"]
+resource_name = "PowerGem"
+texture = ExtResource("6_nh60p")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hmf71"]
+resource_name = "TreeTS"
+texture = ExtResource("7_6svxm")
+texture_region_size = Vector2i(128, 128)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lgtjm"]
+resource_name = "TreeTL"
+texture = ExtResource("8_4eyal")
+texture_region_size = Vector2i(128, 128)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ptd3h"]
+resource_name = "TreeSmS"
+texture = ExtResource("9_jc7do")
+texture_region_size = Vector2i(128, 128)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cmsjv"]
+resource_name = "TreeMdS"
+texture = ExtResource("10_xcdn0")
+texture_region_size = Vector2i(128, 128)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kx0xg"]
+resource_name = "Stump"
+texture = ExtResource("11_o8n4v")
+texture_region_size = Vector2i(128, 128)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_58q1n"]
+resource_name = "Generator"
+texture = ExtResource("12_pan0t")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_if2rp"]
+resource_name = "Comms"
+texture = ExtResource("13_etlbx")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_75swm"]
+resource_name = "Barracks"
+texture = ExtResource("14_rc3f4")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_o0ceh"]
+resource_name = "VehicleG"
+texture = ExtResource("15_v1ivu")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qrjjt"]
+resource_name = "WaterPlant"
+texture = ExtResource("16_dyp0c")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5ea3p"]
+resource_name = "GeneratorOn"
+texture = ExtResource("17_nxqat")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kq5ax"]
+resource_name = "GreenHouse"
+texture = ExtResource("18_flxvx")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lteg8"]
+resource_name = "Bush"
+texture = ExtResource("19_ddpks")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_errgm"]
+tile_size = Vector2i(128, 128)
+sources/0 = SubResource("TileSetAtlasSource_jr1jk")
+sources/1 = SubResource("TileSetAtlasSource_2y056")
+sources/2 = SubResource("TileSetAtlasSource_58q1n")
+sources/3 = SubResource("TileSetAtlasSource_if2rp")
+sources/4 = SubResource("TileSetAtlasSource_75swm")
+sources/5 = SubResource("TileSetAtlasSource_o0ceh")
+sources/6 = SubResource("TileSetAtlasSource_qrjjt")
+sources/7 = SubResource("TileSetAtlasSource_5ea3p")
+sources/8 = SubResource("TileSetAtlasSource_kq5ax")
+sources/9 = SubResource("TileSetAtlasSource_lteg8")
+sources/10 = SubResource("TileSetAtlasSource_xdp15")
+sources/11 = SubResource("TileSetAtlasSource_lj0c7")
+sources/12 = SubResource("TileSetAtlasSource_mea12")
+sources/13 = SubResource("TileSetAtlasSource_hmf71")
+sources/14 = SubResource("TileSetAtlasSource_lgtjm")
+sources/15 = SubResource("TileSetAtlasSource_ptd3h")
+sources/16 = SubResource("TileSetAtlasSource_cmsjv")
+sources/17 = SubResource("TileSetAtlasSource_kx0xg")
 
 [sub_resource type="GDScript" id="GDScript_0vny1"]
 script/source = "extends HTTPRequest
@@ -13,7 +155,17 @@ script/source = "extends HTTPRequest
 [node name="Main" type="Node2D"]
 script = ExtResource("1_rtn58")
 
-[node name="Grid" type="Node2D" parent="."]
+[node name="Grid" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_errgm")
+format = 2
+layer_0/name = "floor"
+layer_1/name = "building"
+layer_1/enabled = true
+layer_1/modulate = Color(1, 1, 1, 1)
+layer_1/y_sort_enabled = false
+layer_1/y_sort_origin = 0
+layer_1/z_index = 1
+layer_1/tile_data = PackedInt32Array()
 script = ExtResource("2_dadgn")
 show_debug = true
 

@@ -4,8 +4,7 @@ extends Area2D
 @onready var main = get_tree().root.get_node("Main")
 @onready var grid: Grid = main.get_node("Grid")
 @onready var pf: PathFinder = grid.get_node("PathFinder")
-var data: UnitData
-var speed = 100
+var data: UnitData = UnitData.new()
 
 var path: Array[Vector2]
 var pos: Vector2:
@@ -14,6 +13,9 @@ var pos: Vector2:
 	set(value):
 		pos = value
 		
+func _ready():
+	pos = grid.worldToGrid(position)		
+
 func _process(delta):
 	move(delta)
 	
@@ -33,4 +35,4 @@ func move(delta):
 			pos = path[0]
 			path.pop_front()
 		else:
-			position += (grid.gridToWorld(path[0]) - position).normalized() * speed * delta
+			position += (grid.gridToWorld(path[0]) - position).normalized() * data.speed * delta
